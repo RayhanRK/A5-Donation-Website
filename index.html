@@ -38,10 +38,10 @@
 
         <nav class="w-4/5 flex md:flex-row flex-col py-5 mx-auto md:justify-between items-center gap-2">
 
-           <div>
-            <button class=" bg-[#B4F461] text-[#111111] text-lg font-semibold rounded-lg px-6 py-2 md:px-4 ">
+           <div class="my-1">
+            <a href="blog.html" class=" bg-[#B4F461] text-[#111111] text-lg font-semibold rounded-lg px-6 py-2 md:px-5 ">
                 Blog
-            </button>
+            </a>
            </div>
 
             <div class="flex items-center gap-4">
@@ -51,7 +51,8 @@
 
             <div class="flex items-center gap-2">
                 <img src="./assets/coin.png" alt="coin" class="h-6 w-6 lg:h-8 lg:w-8">
-                <h1 class="text-[#111111B3] text-lg lg:text-xl font-semibold" >5500 BDT </h1>
+                <p1 class="text-[#111111B3] text-lg lg:text-xl font-semibold" >5500</p1>
+                <p1 class="text-[#111111B3] text-lg lg:text-xl font-semibold" >BDT</p1>
             </div>            
         </nav>
      </div>
@@ -193,9 +194,36 @@
         </section>
     </main>
 
+    <!-- Modal design -->
+
+    <dialog id="my_modal" class="modal">
+
+        <div class="modal-box flex gap-2 flex-col items-center text-center">
+
+            <h3 class="text-3xl font-bold text-[#111111]">Congrates!</h3>
+            <img src="./assets/coin.png" alt="" class="w-8 h-8">
+
+            <p class="py-4">You Have Donated for Humankind</p>
+            <h3 class="text-xl text-[#111111] font-bold">Successfully</h3>
+
+            <div class="modal-action justify-center">
+
+            <form method="dialog">
+                <button class="btn">Close Confirmation</button>
+            </form>
+
+            </div>
+
+        </div>
+        </dialog>
+
      <footer>
         <div class="bg-[#F9F7F3] h-[100px] mt-12"></div>
-
      </footer>  
+
+     <!-- js Angta🔗 -->
+     <script src="./js/handle.js"></script>
+     <script src="./js/utilities.js"></script>
+
 </body>
 </html>
