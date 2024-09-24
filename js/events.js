@@ -107,10 +107,10 @@ function getBalance(id){
 // calculating function
 
 function  calculate(donationInput,navbarBalance,locationBalance,id,locationTitle){
+    
+    if(isNaN(donationInput ) || donationInput <= 0 || donationInput === "" ){
 
-    if(isNaN(donationInput ) || 1> donationInput){
-
-        alert('Invalid Donation Amount!')
+        alert('Invalid Donation Amount! Please enter any positive Amount.')
     }
     else if( donationInput > navbarBalance){
         alert("Insufficient Balance!")
