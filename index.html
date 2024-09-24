@@ -58,10 +58,10 @@
      </div>
    <!-- buttons section -->
         <div class="btn-container flex justify-center items-center gap-8 border-b-2 border-[#11111128] py-5">
-            <button class=" bg-[#B4F461] text-[#111111] text-xl font-semibold rounded-lg px-6 py-2 ">
+            <button id="btn-donation" class=" bg-[#B4F461] text-[#111111] text-xl font-semibold rounded-lg px-6 py-2 ">
                 Donation</button> 
 
-            <button class=" text-[#111111B3]  border border-[2px solid  rgba(17, 17, 17, .3)] text-xl font-semibold rounded-lg px-6 py-2">
+            <button id="btn-history" class=" text-[#111111B3]  border border-[2px solid  rgba(17, 17, 17, .3)] text-xl font-semibold rounded-lg px-6 py-2">
                 History</button>   
         </div>
      </header>
@@ -69,7 +69,7 @@
 
     <main class="mt-5 mb-8">
 
-      <section class="w-4/5 mx-auto space-y-4">
+      <section id="main-sec" class="w-4/5 mx-auto space-y-4">
 
         <!-- card-1 Noakhali flood -->
 
@@ -102,7 +102,7 @@
              <div class="flex flex-col gap-5">
                 
                 <input id="noakhali-input-value" type="text" placeholder="Write Donation Amount" class="border border-[1px solid rgba(17, 17, 17, 0.1)] py-3 px-5 w-full" />
-                <button id="noakhali-btn"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
+                <button id="btn-noakhali"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
                 
              </div>
 
@@ -133,7 +133,7 @@
          <!-- txt div for card-2 -->
          <div class="space-y-2">
 
-            <h3 id="noakhali-title" class="md:text-xl font-bold text-[#111111]">Donate for Flood Relief in Feni,Bangladesh</h3>
+            <h3 id="feni-title" class="md:text-xl font-bold text-[#111111]">Donate for Flood Relief in Feni,Bangladesh</h3>
 
             <p class="md:text-[16px] text-[12px]"> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
 
@@ -142,8 +142,8 @@
         <!-- Input div for card-2 -->
          <div class="flex flex-col gap-5">
             
-            <input id="noakhali-input-value" type="text" placeholder="Write Donation Amount" class="border border-[1px solid rgba(17, 17, 17, 0.1)] py-3 px-5 w-full" />
-            <button id="noakhali-btn"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
+            <input id="feni-input-value" type="text" placeholder="Write Donation Amount" class="border border-[1px solid rgba(17, 17, 17, 0.1)] py-3 px-5 w-full" />
+            <button id="btn-feni"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
             
          </div>
 
@@ -158,7 +158,7 @@
 
             <!-- left img div for card-3 -->
              <div class="w-full md:w-2/4">
-                <img src="./assets/noakhali.png" alt="red-boat">
+                <img src="./assets/quota-protest.png" alt="red-boat">
              </div>
 
             <!--RS coin button for card-3 -->
@@ -173,7 +173,7 @@
              <!-- txt div for card-3 -->
              <div class="space-y-2">
 
-                <h3 id="noakhali-title" class="md:text-xl font-bold text-[#111111]">Aid for Injured in the Quota Movement</h3>
+                <h3 id="quota-title" class="md:text-xl font-bold text-[#111111]">Aid for Injured in the Quota Movement</h3>
 
                 <p class="md:text-[16px] text-[12px]"> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
 
@@ -182,8 +182,8 @@
             <!-- Input div for card-3 -->
              <div class="flex flex-col gap-5">
                 
-                <input id="noakhali-input-value" type="text" placeholder="Write Donation Amount" class="border border-[1px solid rgba(17, 17, 17, 0.1)] py-3 px-5 w-full" />
-                <button id="noakhali-btn"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
+                <input id="quota-input-value" type="text" placeholder="Write Donation Amount" class="border border-[1px solid rgba(17, 17, 17, 0.1)] py-3 px-5 w-full" />
+                <button id="btn-quota"  class="text-xl font-bold text-black bg-[#B4F461] rounded-lg py-2">Donate Now</button>
                 
              </div>
 
@@ -192,6 +192,15 @@
          </div>
 
         </section>
+
+          <!-- history section card start -->
+      <section id="history-page" class="max-w-4/5 mx-auto hidden h-auto mt-5">
+        <div id="history-div">
+
+        </div>
+
+      </section>
+
     </main>
 
     <!-- Modal design -->
@@ -222,8 +231,8 @@
      </footer>  
 
      <!-- js Angta🔗 -->
-     <script src="./js/handle.js"></script>
-     <script src="./js/utilities.js"></script>
+     <script src="./js/events.js"></script>
+     <script src="./js/function.js"></script>
 
 </body>
 </html>
