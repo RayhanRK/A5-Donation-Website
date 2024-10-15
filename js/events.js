@@ -1,140 +1,186 @@
 //------- Common items-------
 
 // header buttons
-const btnHistory  = document.getElementById('btn-history');
-const btnDonation = document.getElementById('btn-donation');
+const btnHistory = document.getElementById("btn-history");
+const btnDonation = document.getElementById("btn-donation");
 
 // Main section and history tab id
-const mainSection    = document.getElementById('main-sec');
-const historySection = document.getElementById('history-page');
+const mainSection = document.getElementById("main-sec");
+const historySection = document.getElementById("history-page");
 
 // Home page 3 cards donation buttons
-const noakhaliButton = document.getElementById('btn-noakhali');
-const feniButton     = document.getElementById('btn-feni');
-const quotaButton    = document.getElementById('btn-quota'); 
-
-
+const noakhaliButton = document.getElementById("btn-noakhali");
+const feniButton = document.getElementById("btn-feni");
+const quotaButton = document.getElementById("btn-quota");
 
 //--------------- All card Events--------------
 
-// Noakhali card  
+acceptInput("noakhali-donationInput");
+acceptInput("feni-donationInput");
+acceptInput("quota-donationInput");
 
-noakhaliButton.addEventListener('click',function(){
+function acceptInput(inputID) {
+  document
+    .getElementById(inputID)
+    .addEventListener("input", (e) => {
+      let input = e.target.value;
+      let numericInput = input.replace(/[^0-9]/g, "");
+      e.target.value = numericInput;
+    });
+}
 
-    const navbarBalance       = getBalance('nav-balance');
-    const noakhaliCoinBalance = getBalance('ncn-balance');
-    const noakhaliCardTitle   = document.getElementById('ncd-title').innerText;
-    const donationInput       = getInputValue('noakhali-donationInput');
+// Noakhali card
 
-    calculate(donationInput,navbarBalance,noakhaliCoinBalance,'ncn-balance',noakhaliCardTitle);
+noakhaliButton.addEventListener("click", function () {
+  const navbarBalance = getBalance("nav-balance");
+  const noakhaliCoinBalance = getBalance("ncn-balance");
+  const noakhaliCardTitle = document.getElementById("ncd-title").innerText;
+  const donationInput = getInputValue("noakhali-donationInput");
 
-})
+  calculate(
+    donationInput,
+    navbarBalance,
+    noakhaliCoinBalance,
+    "ncn-balance",
+    noakhaliCardTitle,
+    "noakhali-donationInput"
+  );
+});
 
+// Feni card
 
-// Feni card 
+feniButton.addEventListener("click", function () {
+  const navbarBalance = getBalance("nav-balance");
+  const feniCoinBalance = getBalance("fcn-balance");
+  const feniCardTitle = document.getElementById("fcd-title").innerText;
+  const donationInput = getInputValue("feni-donationInput");
 
-feniButton.addEventListener('click', function(){
+  calculate(
+    donationInput,
+    navbarBalance,
+    feniCoinBalance,
+    "fcn-balance",
+    feniCardTitle,
+    "feni-donationInput"
+  );
+});
 
-    const navbarBalance   = getBalance('nav-balance');
-    const feniCoinBalance = getBalance('fcn-balance');
-    const feniCardTitle   = document.getElementById('fcd-title').innerText;
-    const donationInput   = getInputValue('feni-donationInput');
+// Quota card
 
-    calculate(donationInput,navbarBalance,feniCoinBalance,'fcn-balance',feniCardTitle);
+quotaButton.addEventListener("click", function () {
+  const navbarBalance = getBalance("nav-balance");
+  const quotaCoinBalance = getBalance("qcn-balance");
+  const quotaCardTitle = document.getElementById("qcd-title").innerText;
+  const donationInput = getInputValue("quota-donationInput");
 
-})
-
-// Quota card  
-
-quotaButton.addEventListener('click',function(){
-
-    const navbarBalance    = getBalance('nav-balance');
-    const quotaCoinBalance = getBalance('qcn-balance');
-    const quotaCardTitle   = document.getElementById('qcd-title').innerText;
-    const donationInput    = getInputValue('quota-donationInput');
-
-    calculate(donationInput,navbarBalance,quotaCoinBalance,'qcn-balance',quotaCardTitle)
-      
-})
-
+  calculate(
+    donationInput,
+    navbarBalance,
+    quotaCoinBalance,
+    "qcn-balance",
+    quotaCardTitle,
+    "quota-donationInput"
+  );
+});
 
 //---------------click events:-----------------
 
-btnHistory.addEventListener('click', function(){
+btnHistory.addEventListener("click", function () {
+  mainSection.classList.add("hidden");
+  historySection.classList.remove("hidden");
 
-    mainSection.classList.add('hidden');
-    historySection.classList.remove('hidden');
+  btnHistory.classList.add("bg-[#B4F461]", "text-[#111111]");
+  btnHistory.classList.remove(
+    "border-2",
+    "border-[#111111B3]",
+    "text-[#111111B3]"
+  );
 
-    btnHistory.classList.add('bg-[#B4F461]', 'text-[#111111]');
-    btnHistory.classList.remove('border-2' ,'border-[#111111B3]','text-[#111111B3]')
-	
-	
-   btnDonation.classList.remove('bg-[#B4F461]', 'text-[#111111]');
-   btnDonation.classList.add('border-2' ,'border-[#111111B3]','text-[#111111B3]')
+  btnDonation.classList.remove("bg-[#B4F461]", "text-[#111111]");
+  btnDonation.classList.add(
+    "border-2",
+    "border-[#111111B3]",
+    "text-[#111111B3]"
+  );
+});
 
-})
+btnDonation.addEventListener("click", function () {
+  mainSection.classList.remove("hidden");
+  historySection.classList.add("hidden");
 
-btnDonation.addEventListener('click', function(){
+  btnDonation.classList.add("bg-[#B4F461]", "text-[#111111]");
+  btnDonation.classList.remove(
+    "border-2",
+    "border-[#111111B3]",
+    "text-[#111111B3]"
+  );
 
-    mainSection.classList.remove('hidden');
-    historySection.classList.add('hidden');
-
-    btnDonation.classList.add('bg-[#B4F461]', 'text-[#111111]');
-    btnDonation.classList.remove('border-2' ,'border-[#111111B3]','text-[#111111B3]')
-
-    btnHistory.classList.remove('bg-[#B4F461]', 'text-[#111111]');
-    btnHistory.classList.add('border-2' ,'border-[#111111B3]','text-[#111111B3]')
-})
-
-
-
+  btnHistory.classList.remove("bg-[#B4F461]", "text-[#111111]");
+  btnHistory.classList.add(
+    "border-2",
+    "border-[#111111B3]",
+    "text-[#111111B3]"
+  );
+});
 
 //--------------------------- All function js------------------------------------
 
 //2 common functions:
 
-function getInputValue(id){
-
-    return parseFloat(document.getElementById(id).value);
+function getInputValue(id) {
+  return parseFloat(document.getElementById(id).value);
 }
 
-function getBalance(id){
-
-    return parseFloat(document.getElementById(id).innerText);
+function getBalance(id) {
+  return parseFloat(document.getElementById(id).innerText);
 }
-
 
 // calculating function
 
-function  calculate(donationInput,navbarBalance,locationBalance,id,locationTitle){
-    
-    if(isNaN(donationInput ) || donationInput <= 0 || donationInput === "" ){
+function calculate(
+  donationInput,
+  navbarBalance,
+  locationBalance,
+  id,
+  locationTitle,
+  inputId
+) {
+  if (isNaN(donationInput) || donationInput <= 0 || navbarBalance === "") {
+    alert("Invalid Donation Amount! Please Enter Valid Amount.");
+  } else if (donationInput > navbarBalance) {
+    alert("Insufficient Balance!");
+  } else {
+    my_modal.showModal();
+    document.getElementById(id).innerText = (
+      locationBalance + donationInput
+    ).toFixed(2);
+    document.getElementById("nav-balance").innerText = (
+      navbarBalance - donationInput
+    ).toFixed(2);
 
-        alert('Invalid Donation Amount! Please enter any positive Amount.')
-    }
-    else if( donationInput > navbarBalance){
-        alert("Insufficient Balance!")
-    }
-    else{
-        my_modal.showModal();
-        document.getElementById(id).innerText = (locationBalance + donationInput).toFixed(2);
-        document.getElementById('nav-balance').innerText = (navbarBalance - donationInput).toFixed(2);
-
-        history(donationInput,locationTitle);
-    }
-
+    history(donationInput, locationTitle);
+    document.getElementById(inputId).value = ""; //not working
+  }
 }
 
 // History function
 
-function history(donationInput,locationTitle){
+function history(donationInput, locationTitle) {
+  const div = document.createElement("div");
+  const now = new Date();
+  const dateTimeString = now.toString();
 
-    const div = document.createElement('div');
-    const now = new Date()
-    const dateTimeString = now.toString();
-
-    div.classList.add( 'flex', 'flex-col', 'gap-4', 'md:p-6', 'p-4', 'border-2', 'border-[#111111B3]', 'rounded-lg');
-    div.innerHTML = `
+  div.classList.add(
+    "flex",
+    "flex-col",
+    "gap-4",
+    "md:p-6",
+    "p-4",
+    "border-2",
+    "border-[#111111B3]",
+    "rounded-lg"
+  );
+  div.innerHTML = `
         <h3 class="md:text-xl font-extrabold text-black">
             ${donationInput} Taka donated to: ${locationTitle}
         </h3>
@@ -142,6 +188,5 @@ function history(donationInput,locationTitle){
             ${dateTimeString}
         </p>   
     `;
-    document.getElementById('history-div').appendChild(div);
-
+  document.getElementById("history-div").appendChild(div);
 }
